@@ -34,7 +34,7 @@ fraudmer2
 corr_matrix = fraudmer2.corr().abs()
 
 upper = corr_matrix.where(np.triu(np.ones(corr_matrix.shape), k=1).astype(bool))
-to_drop = [column for column in upper.columns if any(upper[column] > 0.80)]
+to_drop = [column for column in upper.columns if any(upper[column] > 0.9)]
 fraudmer2.drop(fraudmer2[to_drop], axis=1)
 -------------------
 
